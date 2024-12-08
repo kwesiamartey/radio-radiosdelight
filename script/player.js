@@ -695,7 +695,9 @@ function showSpinner(show) {
 // Play/pause functionality with icons
 playButton.addEventListener('click', () => {
 
-              if (!isPlaying) {
+        if (!isPlaying) {
+                  document.getElementById('ani_equalizer').style.display = 'block';
+
                     audio.play();
                     playButton.innerHTML = '||';  // Pause icon
                     showSpinner(false); // Hide the spinner when playing starts
@@ -704,6 +706,7 @@ playButton.addEventListener('click', () => {
                     //initAudioPlayer(url, img, name, bit, location1)
 
               } else {
+                    document.getElementById('ani_equalizer').style.display = 'none';
                     audio.pause();
                     playButton.innerHTML = '▶';  // Play icon
                     isPlaying = false;
